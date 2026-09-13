@@ -46,7 +46,7 @@ export default {
             const isJailed = userData.jailedUntil && userData.jailedUntil > now;
 
             if (isJailed) {
-                const timeLeft = Math.ceil((userData.jailedUntil - now) / (1000 * 60));
+                const timeLeft = Math.ceil((userData.jailedUntil - now) / (10000 * 60));
                 throw createError(
                     "User is in jail",
                     ErrorTypes.RATE_LIMIT,
