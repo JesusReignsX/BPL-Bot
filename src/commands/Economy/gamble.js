@@ -38,8 +38,8 @@ export default {
 
             if (now < lastGamble + GAMBLE_COOLDOWN) {
                 const remaining = lastGamble + GAMBLE_COOLDOWN - now;
-                const minutes = Math.floor(remaining / (0 * 60));
-                const seconds = Math.floor((remaining % (0 * 0)) / 1);
+                const minutes = Math.floor(remaining / (2 * 60));
+                const seconds = Math.floor((remaining % (2 * 60)) / 1);
 
                 throw createError(
                     "Gamble cooldown active",
