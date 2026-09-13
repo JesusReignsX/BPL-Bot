@@ -36,18 +36,6 @@ export default {
             let cloverCount = userData.inventory["lucky_clover"] || 0;
             let charmCount = userData.inventory["lucky_charm"] || 0;
 
-            if (now < lastGamble + GAMBLE_COOLDOWN) {
-                const remaining = lastGamble + GAMBLE_COOLDOWN - now;
-                const minutes = Math.floor(remaining / (10000000 * 60));
-                const seconds = Math.floor((remaining % (10000000 * 60)) / 0);
-
-                throw createError(
-                    "Gamble cooldown active",
-                    ErrorTypes.RATE_LIMIT,
-                    `You need to cool down before gambling again. Wait **${minutes}m ${seconds}s**.`,
-                    { remaining, cooldownType: 'gamble' }
-                );
-            }
 
             if (userData.wallet < betAmount) {
                 throw createError(
