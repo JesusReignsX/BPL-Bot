@@ -36,7 +36,7 @@ export default {
             let cloverCount = userData.inventory["lucky_clover"] || 0;
             let charmCount = userData.inventory["lucky_charm"] || 0;
 
-                    if (now < lastGamble + GAMBLE_COOLDOWN)
+                    if (now < lastGamble + GAMBLE_COOLDOWN) {
                 const remaining = lastGamble + GAMBLE_COOLDOWN - now;
                 const minutes = Math.floor(remaining / (1000 * 60));
                 const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
